@@ -57,7 +57,7 @@ i{
     01. HEADER
 --------------------*/
 header{
-    background-color: black;
+    background-color: rgb(45, 45, 45);
     width: 100%;
     position: sticky;
     top:0px;
