@@ -57,11 +57,12 @@ i{
     01. HEADER
 --------------------*/
 header{
-    background-color: rgb(45, 45, 45);
+    background-color: black;
     width: 100%;
     position: sticky;
     top:0px;
     text-align: center;
+
 }
 
 header nav ul{
@@ -88,10 +89,6 @@ header nav li{
     border-left: solid 5px yellow;
     border-radius: 5px;
     cursor: pointer;
-}
-
-header nav li:hover{
-    background-color: black;
 }
 
 /*--------------------
@@ -202,5 +199,83 @@ footer p{
 
     #skills{
         grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+/*--------------------
+    06. ANIMACIONES
+--------------------*/
+
+header{
+    animation-name: fadeInDown;
+    animation-duration: 1.5s;
+}
+
+header img:hover{
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+header nav ul li:hover{
+    background-color: black;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+main{
+    animation-name: fadeInLeft;
+    animation-duration: 1.5s;
+}
+
+footer{
+    animation-name: fadeInUp;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeInDown{
+    from{
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pulse{
+    from{
+        transform: scale3d(1, 1, 1);
+    }
+    50%{
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to{
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes fadeInLeft {
+    from{
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from{
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
