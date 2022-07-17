@@ -1,0 +1,206 @@
+/*--------------------
+    00. GENERAL
+--------------------*/
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Finlandica', sans-serif;
+    box-sizing: border-box; 
+}
+
+body{
+    background-color: lightgray;
+    width: 100%;
+    height: 100vh;
+
+    display: grid; /*grid: todo el body*/
+    grid-template-rows: 450px auto 90px; /*grid filas: header - main - footer*/
+}
+
+h2{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    text-decoration: underline;
+}
+
+h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h4{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+p{
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+input{
+    display:inline-block;
+}
+
+i{
+    color: rgb(211, 211, 211);
+}
+
+/*--------------------
+    01. HEADER
+--------------------*/
+header{
+    background-color: black;
+    width: 100%;
+    position: sticky;
+    top:0px;
+    text-align: center;
+}
+
+header nav ul{
+    display: grid; /*grid: todo el menu*/
+    grid-template-columns: repeat(1, 1fr); /*grid columnas: 1*/
+    gap: 10px;
+    justify-items: center;
+}
+
+header nav ul li{ 
+    display: flex; /*flex: cada boton*/
+	flex-direction: column;
+    justify-content: center;
+}
+
+header nav li{
+    width: 180px;
+    height: 60px;
+    list-style: none;
+    background-color: white;
+    border-top: solid 5px red;
+    border-right: solid 5px cyan;
+    border-bottom: solid 5px green;
+    border-left: solid 5px yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header nav li:hover{
+    background-color: black;
+}
+
+/*--------------------
+    02. MAIN
+--------------------*/
+main{
+    margin: 30px;
+    width: auto;
+    border-top: dashed 5px red;
+    border-right: dashed 5px cyan;
+    border-bottom: dashed 5px green;
+    border-left: dashed 5px yellow;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 5px;
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+
+    display: flex; /*flex: todas las secciones*/
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main section{
+    width: 100%;
+    margin: 10px;
+    border: dashed 5px #808080;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main section div img{
+    margin: 10px;
+}
+
+/*--------------------
+    03. FOOTER
+--------------------*/
+footer{
+    text-align: center;
+    background-color: black;
+    width: 100%;
+}
+
+footer p{
+    color: white;
+}
+
+/*--------------------
+    04. CLASS & ID
+--------------------*/
+.textoEncerrado{
+    max-height: 150px;
+    overflow: auto;
+    color: grey;
+}
+
+.tablaServicios{
+    display: inline-block;
+    border-color: goldenrod;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#skills{
+    display: grid; /*grid: skills*/
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+}
+
+/*--------------------
+    05. MEDIA QUERIES
+--------------------*/
+
+@media only screen and (min-width:600px){
+    header nav ul{
+        grid-template-columns: repeat(2, 1fr); /*grid columnas: 2*/
+    }
+
+    body{
+        grid-template-rows: 310px auto 90px;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px){
+    header nav ul{
+        grid-template-columns: repeat(3, 1fr); /*grid columnas: 3*/
+    }
+
+    body{
+        grid-template-rows: 240px auto 90px;
+    }
+
+    #skills{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media only screen and (min-width:1024px){
+    header nav ul{
+        grid-template-columns: repeat(5, 1fr); /*grid columnas: 5 (1 por boton)*/
+    }
+
+    body{
+        grid-template-rows: 180px auto 90px;
+    }
+
+    #skills{
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
