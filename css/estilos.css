@@ -88,7 +88,6 @@ header nav li{
     border-bottom: solid 5px green;
     border-left: solid 5px yellow;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 /*--------------------
@@ -227,6 +226,12 @@ header nav ul li:hover{
 main{
     animation-name: fadeInLeft;
     animation-duration: 1.5s;
+}
+
+main img:hover{
+    cursor:pointer;
+    box-shadow: -1px 6.5px 15px rgba(208, 211, 214, 0.75);
+    transform: scale(1.05);
 }
 
 footer{
