@@ -5,16 +5,19 @@
     margin:0;
     padding:0;
     font-family: 'Finlandica', sans-serif;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    text-decoration: none;
+    
 }
 
 body{
-    background-color: lightgray;
-    width: 100%;
+    background-image: linear-gradient(180deg, #30d5c8 0%, #51e0b9 17%, #78e9a6 39%, #a1f192 60%, #ccf67f 80%, #f9f871 100%);
     height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     display: grid; /*grid: todo el body*/
-    grid-template-rows: 450px auto 90px; /*grid filas: header - main - footer*/
+    grid-template-rows: 430px auto 80px; /*grid filas: header - main - footer*/
 }
 
 h2{
@@ -50,19 +53,25 @@ input{
 }
 
 i{
-    color: rgb(211, 211, 211);
+    color: #30D5C8;
 }
 
 /*--------------------
     01. HEADER
 --------------------*/
 header{
-    background-color: black;
+    background-color: #ffff;
     width: 100%;
     position: sticky;
     top:0px;
     text-align: center;
+}
 
+header a p{ /*logo*/
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    color: #30D5C8;
+    margin: 25px 0px 25px 0px;
 }
 
 header nav ul{
@@ -73,39 +82,34 @@ header nav ul{
 }
 
 header nav ul li{ 
+    width: 180px;
+    height: 60px;
+    list-style: none;
+    background-color: white;
+    border-top: solid 5px #30D5C8;
+    border-right: solid 5px #51E0B9;
+    border-bottom: solid 5px #78E9A6;
+    border-left: solid 5px #A1F192;
+    border-radius: 5px;
+
     display: flex; /*flex: cada boton*/
 	flex-direction: column;
     justify-content: center;
 }
 
-header nav li{
-    width: 180px;
-    height: 60px;
-    list-style: none;
-    background-color: white;
-    border-top: solid 5px red;
-    border-right: solid 5px cyan;
-    border-bottom: solid 5px green;
-    border-left: solid 5px yellow;
-    border-radius: 5px;
+header nav ul li a{
+    color: black;
 }
 
 /*--------------------
     02. MAIN
 --------------------*/
 main{
-    margin: 30px;
+    margin: 14px;
     width: auto;
-    border-top: dashed 5px red;
-    border-right: dashed 5px cyan;
-    border-bottom: dashed 5px green;
-    border-left: dashed 5px yellow;
+    border: dashed 5px #F9F871;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border-radius: 5px;
-    background-image: url("https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
 
     display: flex; /*flex: todas las secciones*/
     flex-direction: row;
@@ -114,8 +118,8 @@ main{
 
 main section{
     width: 100%;
-    margin: 10px;
-    border: dashed 5px #808080;
+    margin: 7px;
+    border: dashed 5px #E8F3F1;
     padding: 5px;
     border-radius: 5px;
 }
@@ -129,12 +133,12 @@ main section div img{
 --------------------*/
 footer{
     text-align: center;
-    background-color: black;
+    background-color: #ffff;
     width: 100%;
 }
 
 footer p{
-    color: white;
+    color: #51E0B9;
 }
 
 /*--------------------
@@ -169,7 +173,7 @@ footer p{
     }
 
     body{
-        grid-template-rows: 310px auto 90px;
+        grid-template-rows: 290px auto 80px;
     }
 }
 
@@ -179,7 +183,7 @@ footer p{
     }
 
     body{
-        grid-template-rows: 240px auto 90px;
+        grid-template-rows: 220px auto 80px;
     }
 
     #skills{
@@ -193,7 +197,7 @@ footer p{
     }
 
     body{
-        grid-template-rows: 180px auto 90px;
+        grid-template-rows: 150px auto 80px;
     }
 
     #skills{
@@ -210,14 +214,14 @@ header{
     animation-duration: 1.5s;
 }
 
-header img:hover{
-    animation-name: pulse;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
+header p:hover{
+    color: #51E0B9;
+    font-size: 60px;
+    transition-duration: 1.5s;
 }
 
 header nav ul li:hover{
-    background-color: black;
+    background-color: #E8F3F1;
     animation-name: pulse;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
@@ -228,15 +232,21 @@ main{
     animation-duration: 1.5s;
 }
 
-main img:hover{
-    cursor:pointer;
-    box-shadow: -1px 6.5px 15px rgba(208, 211, 214, 0.75);
-    transform: scale(1.05);
+#skills img:hover{
+    transform: scale(1.2);
+    transition-duration: 1.5s;
 }
 
 footer{
     animation-name: fadeInUp;
     animation-duration: 1.5s;
+}
+
+i:hover{
+    color: #51E0B9;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes fadeInDown{
