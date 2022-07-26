@@ -6,8 +6,6 @@
     padding:0;
     font-family: 'Finlandica', sans-serif;
     box-sizing: border-box;
-    text-decoration: none;
-    
 }
 
 body{
@@ -17,7 +15,7 @@ body{
     background-attachment: fixed;
 
     display: grid; /*grid: todo el body*/
-    grid-template-rows: 430px auto 80px; /*grid filas: header - main - footer*/
+    grid-template-rows: 440px auto 80px; /*grid filas: header - main - footer*/
 }
 
 h2{
@@ -74,16 +72,11 @@ header a p{ /*logo*/
     margin: 25px 0px 25px 0px;
 }
 
-header nav ul{
-    display: grid; /*grid: todo el menu*/
-    grid-template-columns: repeat(1, 1fr); /*grid columnas: 1*/
-    gap: 10px;
-    justify-items: center;
+header a:hover{
+    text-decoration: none;
 }
 
 header nav ul li{ 
-    width: 180px;
-    height: 60px;
     list-style: none;
     background-color: white;
     border-top: solid 5px #30D5C8;
@@ -92,12 +85,14 @@ header nav ul li{
     border-left: solid 5px #A1F192;
     border-radius: 5px;
 
-    display: flex; /*flex: cada boton*/
-	flex-direction: column;
-    justify-content: center;
+    margin: 10px 20px 10px 20px;
 }
 
 header nav ul li a{
+    color: black;
+}
+
+header nav ul li a:hover{
     color: black;
 }
 
@@ -167,39 +162,19 @@ footer p{
     05. MEDIA QUERIES
 --------------------*/
 
-@media only screen and (min-width:600px){
-    header nav ul{
-        grid-template-columns: repeat(2, 1fr); /*grid columnas: 2*/
-    }
-
+@media only screen and (min-width:768px){
     body{
-        grid-template-rows: 290px auto 80px;
+        grid-template-rows: 160px auto 80px;
     }
 }
 
 @media only screen and (min-width:768px) and (max-width:1023px){
-    header nav ul{
-        grid-template-columns: repeat(3, 1fr); /*grid columnas: 3*/
-    }
-
-    body{
-        grid-template-rows: 220px auto 80px;
-    }
-
     #skills{
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media only screen and (min-width:1024px){
-    header nav ul{
-        grid-template-columns: repeat(5, 1fr); /*grid columnas: 5 (1 por boton)*/
-    }
-
-    body{
-        grid-template-rows: 150px auto 80px;
-    }
-
     #skills{
         grid-template-columns: repeat(3, 1fr); 
     }
