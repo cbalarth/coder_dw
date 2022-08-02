@@ -1,0 +1,204 @@
+$font1: 'Finlandica', sans-serif
+$colorA1: #30D5C8
+$colorA2: #51E0B9
+$colorA3: #78E9A6
+$colorA4: #A1F192
+$colorA5: #CCF67F
+$colorA6: #F9F871
+$colorB1: #E8F3F1
+$colorHF: white
+
+/*  --------------------
+    00. GENERAL
+    --------------------*/
+*
+    margin:0
+    padding:0
+    font-family: $font1
+    box-sizing: border-box
+
+body
+    background-image: linear-gradient(180deg, $colorA1 0%, $colorA2 17%, $colorA3 39%, $colorA4 60%, $colorA5 80%, $colorA6 100%)
+    height: 100vh
+    background-repeat: no-repeat
+    background-attachment: fixed
+    display: grid
+    grid-template-rows: 440px auto 80px
+    h2
+        margin-bottom: 20px
+        font-size: 40px
+        font-weight: bold
+        letter-spacing: -1px
+        text-decoration: underline
+    h3
+        margin-top: 15px
+        margin-bottom: 15px
+        font-size: 20px
+        font-weight: bold
+    h4
+        margin-top: 15px
+        margin-bottom: 15px
+        font-size: 15px
+        font-weight: normal
+        text-decoration: underline
+    p
+        margin-bottom: 15px
+        line-height: 30px
+    input
+        display: inline-block
+    i
+        color: $colorA1
+
+/*  --------------------
+    01. HEADER
+    --------------------*/
+header
+    background-color: $colorHF
+    width: 100%
+    position: sticky
+    top:0px
+    text-align: center
+    a p
+        font-family: 'Press Start 2P', cursive
+        font-size: 50px
+        color: $colorA1
+        margin: 25px 0px 25px 0px
+    a:hover
+        text-decoration: none
+    nav ul li 
+        list-style: none
+        background-color: white
+        border-top: solid 5px $colorA1
+        border-right: solid 5px $colorA2
+        border-bottom: solid 5px $colorA3
+        border-left: solid 5px $colorA4
+        border-radius: 5px
+        margin: 10px 20px 10px 20px
+        a
+            color: black
+            &:hover
+                color: black
+
+/*  --------------------
+    02. MAIN
+    --------------------*/
+main
+    margin: 14px
+    width: auto
+    border: dashed 5px $colorA6
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+    border-radius: 5px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    section
+        width: 100%
+        margin: 7px
+        border: dashed 5px $colorB1
+        padding: 5px
+        border-radius: 5px
+        div img
+            margin: 10px
+
+/*  --------------------
+    03. FOOTER
+    --------------------*/
+footer
+    text-align: center
+    background-color: $colorHF
+    width: 100%
+    p
+        color: $colorA2
+
+/*  --------------------
+    04. CLASS & ID
+    --------------------*/
+.textoEncerrado
+    max-height: 150px
+    overflow: auto
+    color: grey
+
+.tablaServicios
+    display: inline-block
+    border-color: goldenrod
+    border-radius: 5px
+    margin-bottom: 15px
+
+#skills
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    justify-items: center
+
+/*  --------------------
+    05. MEDIA QUERIES
+    --------------------*/
+@media only screen and (min-width:768px)
+    body
+        grid-template-rows: 160px auto 80px
+@media only screen and (min-width:768px) and (max-width:1023px)
+    #skills
+        grid-template-columns: repeat(2, 1fr)
+@media only screen and (min-width:1024px)
+    #skills
+        grid-template-columns: repeat(3, 1fr)
+
+/*  --------------------
+    06. ANIMACIONES
+    --------------------*/
+header
+    animation-name: fadeInDown
+    animation-duration: 1.5s
+    p:hover
+        color: $colorA2
+        font-size: 60px
+        transition-duration: 1.5s
+    nav ul li:hover
+        background-color: $colorB1
+        animation-name: pulse
+        animation-duration: 1.5s
+        animation-iteration-count: infinite
+
+main
+    animation-name: fadeInLeft
+    animation-duration: 1.5s
+    #skills img:hover
+        transform: scale(1.2)
+        transition-duration: 1.5s
+
+footer
+    animation-name: fadeInUp
+    animation-duration: 1.5s
+    i:hover
+        color: $colorA2
+        animation-name: pulse
+        animation-duration: 1.5s
+        animation-iteration-count: infinite
+
+@keyframes fadeInDown
+    from
+        opacity: 0
+        transform: translate3d(0, -100%, 0)
+    to
+        opacity: 1
+        transform: none
+@keyframes pulse
+    from
+        transform: scale3d(1, 1, 1)
+    50%
+        transform: scale3d(1.05, 1.05, 1.05)
+    to
+        transform: scale3d(1, 1, 1)
+@keyframes fadeInLeft 
+    from
+        opacity: 0
+        transform: translate3d(-100%, 0, 0)
+    to
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+@keyframes fadeInUp 
+    from
+        opacity: 0
+        transform: translate3d(0, 100%, 0)
+    to
+        opacity: 1
+        transform: translate3d(0, 0, 0)

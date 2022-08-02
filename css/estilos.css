@@ -1,271 +1,243 @@
-/*--------------------
-    00. GENERAL
---------------------*/
-*{
-    margin:0;
-    padding:0;
-    font-family: 'Finlandica', sans-serif;
-    box-sizing: border-box;
+/*  --------------------
+ *  00. GENERAL
+ *  --------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Finlandica", sans-serif;
+  box-sizing: border-box;
 }
 
-body{
-    background-image: linear-gradient(180deg, #30d5c8 0%, #51e0b9 17%, #78e9a6 39%, #a1f192 60%, #ccf67f 80%, #f9f871 100%);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    display: grid; /*grid: todo el body*/
-    grid-template-rows: 440px auto 80px; /*grid filas: header - main - footer*/
+body {
+  background-image: linear-gradient(180deg, #30D5C8 0%, #51E0B9 17%, #78E9A6 39%, #A1F192 60%, #CCF67F 80%, #F9F871 100%);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-rows: 440px auto 80px;
+}
+body h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-decoration: underline;
+}
+body h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+body h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+body p {
+  margin-bottom: 15px;
+  line-height: 30px;
+}
+body input {
+  display: inline-block;
+}
+body i {
+  color: #30D5C8;
 }
 
-h2{
-    margin-bottom: 20px;
-    font-size: 40px;
-    font-weight: bold;
-    letter-spacing: -1px;
-    text-decoration: underline;
+/*  --------------------
+ *  01. HEADER
+ *  --------------------*/
+header {
+  background-color: white;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  text-align: center;
+}
+header a p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 50px;
+  color: #30D5C8;
+  margin: 25px 0px 25px 0px;
+}
+header a:hover {
+  text-decoration: none;
+}
+header nav ul li {
+  list-style: none;
+  background-color: white;
+  border-top: solid 5px #30D5C8;
+  border-right: solid 5px #51E0B9;
+  border-bottom: solid 5px #78E9A6;
+  border-left: solid 5px #A1F192;
+  border-radius: 5px;
+  margin: 10px 20px 10px 20px;
+}
+header nav ul li a {
+  color: black;
+}
+header nav ul li a:hover {
+  color: black;
 }
 
-h3{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: bold;
+/*  --------------------
+ *  02. MAIN
+ *  --------------------*/
+main {
+  margin: 14px;
+  width: auto;
+  border: dashed 5px #F9F871;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main section {
+  width: 100%;
+  margin: 7px;
+  border: dashed 5px #E8F3F1;
+  padding: 5px;
+  border-radius: 5px;
+}
+main section div img {
+  margin: 10px;
 }
 
-h4{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 15px;
-    font-weight: normal;
-    text-decoration: underline;
+/*  --------------------
+ *  03. FOOTER
+ *  --------------------*/
+footer {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+}
+footer p {
+  color: #51E0B9;
 }
 
-p{
-    margin-bottom: 15px;
-    line-height: 30px;
+/*  --------------------
+ *  04. CLASS & ID
+ *  --------------------*/
+.textoEncerrado {
+  max-height: 150px;
+  overflow: auto;
+  color: grey;
 }
 
-input{
-    display:inline-block;
+.tablaServicios {
+  display: inline-block;
+  border-color: goldenrod;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
-i{
-    color: #30D5C8;
+#skills {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
 }
 
-/*--------------------
-    01. HEADER
---------------------*/
-header{
-    background-color: #ffff;
-    width: 100%;
-    position: sticky;
-    top:0px;
-    text-align: center;
+/*  --------------------
+ *  05. MEDIA QUERIES
+ *  --------------------*/
+@media only screen and (min-width: 768px) {
+  body {
+    grid-template-rows: 160px auto 80px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*  --------------------
+ *  06. ANIMACIONES
+ *  --------------------*/
+header {
+  animation-name: fadeInDown;
+  animation-duration: 1.5s;
+}
+header p:hover {
+  color: #51E0B9;
+  font-size: 60px;
+  transition-duration: 1.5s;
+}
+header nav ul li:hover {
+  background-color: #E8F3F1;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
-header a p{ /*logo*/
-    font-family: 'Press Start 2P', cursive;
-    font-size: 50px;
-    color: #30D5C8;
-    margin: 25px 0px 25px 0px;
+main {
+  animation-name: fadeInLeft;
+  animation-duration: 1.5s;
+}
+main #skills img:hover {
+  transform: scale(1.2);
+  transition-duration: 1.5s;
 }
 
-header a:hover{
-    text-decoration: none;
+footer {
+  animation-name: fadeInUp;
+  animation-duration: 1.5s;
+}
+footer i:hover {
+  color: #51E0B9;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
-header nav ul li{ 
-    list-style: none;
-    background-color: white;
-    border-top: solid 5px #30D5C8;
-    border-right: solid 5px #51E0B9;
-    border-bottom: solid 5px #78E9A6;
-    border-left: solid 5px #A1F192;
-    border-radius: 5px;
-
-    margin: 10px 20px 10px 20px;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
-
-header nav ul li a{
-    color: black;
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
-
-header nav ul li a:hover{
-    color: black;
-}
-
-/*--------------------
-    02. MAIN
---------------------*/
-main{
-    margin: 14px;
-    width: auto;
-    border: dashed 5px #F9F871;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    border-radius: 5px;
-
-    display: flex; /*flex: todas las secciones*/
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-main section{
-    width: 100%;
-    margin: 7px;
-    border: dashed 5px #E8F3F1;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-main section div img{
-    margin: 10px;
-}
-
-/*--------------------
-    03. FOOTER
---------------------*/
-footer{
-    text-align: center;
-    background-color: #ffff;
-    width: 100%;
-}
-
-footer p{
-    color: #51E0B9;
-}
-
-/*--------------------
-    04. CLASS & ID
---------------------*/
-.textoEncerrado{
-    max-height: 150px;
-    overflow: auto;
-    color: grey;
-}
-
-.tablaServicios{
-    display: inline-block;
-    border-color: goldenrod;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-#skills{
-    display: grid; /*grid: skills*/
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-}
-
-/*--------------------
-    05. MEDIA QUERIES
---------------------*/
-
-@media only screen and (min-width:768px){
-    body{
-        grid-template-rows: 160px auto 80px;
-    }
-}
-
-@media only screen and (min-width:768px) and (max-width:1023px){
-    #skills{
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media only screen and (min-width:1024px){
-    #skills{
-        grid-template-columns: repeat(3, 1fr); 
-    }
-}
-
-/*--------------------
-    06. ANIMACIONES
---------------------*/
-
-header{
-    animation-name: fadeInDown;
-    animation-duration: 1.5s;
-}
-
-header p:hover{
-    color: #51E0B9;
-    font-size: 60px;
-    transition-duration: 1.5s;
-}
-
-header nav ul li:hover{
-    background-color: #E8F3F1;
-    animation-name: pulse;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-}
-
-main{
-    animation-name: fadeInLeft;
-    animation-duration: 1.5s;
-}
-
-#skills img:hover{
-    transform: scale(1.2);
-    transition-duration: 1.5s;
-}
-
-footer{
-    animation-name: fadeInUp;
-    animation-duration: 1.5s;
-}
-
-i:hover{
-    color: #51E0B9;
-    animation-name: pulse;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes fadeInDown{
-    from{
-        opacity: 0;
-        transform: translate3d(0, -100%, 0);
-    }
-
-    to{
-        opacity: 1;
-        transform: none;
-    }
-}
-
-@keyframes pulse{
-    from{
-        transform: scale3d(1, 1, 1);
-    }
-    50%{
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-    to{
-        transform: scale3d(1, 1, 1);
-    }
-}
-
 @keyframes fadeInLeft {
-    from{
-        opacity: 0;
-        transform: translate3d(-100%, 0, 0);
-    }
-    to{
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-@keyframes fadeInUp {
-    from{
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-    to{
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
+/*# sourceMappingURL=estilos.css.map */
