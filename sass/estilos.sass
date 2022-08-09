@@ -17,6 +17,15 @@ $colorHF: white
     font-family: $font1
     box-sizing: border-box
 
+$map_H: 2 #050404 bold underline 40px, 3 #262323 bold none 30px, 4 #3F3D3D normal underline 15px
+@each $title, $color, $fweight, $tdecoration, $fsize in $map_H
+    h#{$title}
+        color: $color
+        font-weight: $fweight
+        text-decoration: $tdecoration
+        font-size: $fsize
+        margin: 15px 0px 15px 0px
+
 body
     background-image: linear-gradient(180deg, $colorA1 0%, $colorA2 17%, $colorA3 39%, $colorA4 60%, $colorA5 80%, $colorA6 100%)
     height: 100vh
@@ -24,23 +33,6 @@ body
     background-attachment: fixed
     display: grid
     grid-template-rows: 440px auto 80px
-    h2
-        margin-bottom: 20px
-        font-size: 40px
-        font-weight: bold
-        letter-spacing: -1px
-        text-decoration: underline
-    h3
-        margin-top: 15px
-        margin-bottom: 15px
-        font-size: 20px
-        font-weight: bold
-    h4
-        margin-top: 15px
-        margin-bottom: 15px
-        font-size: 15px
-        font-weight: normal
-        text-decoration: underline
     p
         margin-bottom: 15px
         line-height: 30px
@@ -82,21 +74,24 @@ header
 /*  --------------------
     02. MAIN
     --------------------*/
-main
-    margin: 14px
-    width: auto
-    border: dashed 5px $colorA6
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+.xt_Main
+    border: dashed 5px
     border-radius: 5px
+    width: auto
+
+main
+    @extend .xt_Main
+    margin: 14px
+    border-color: $colorA6
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
     display: flex
     flex-direction: row
     flex-wrap: wrap
     section
-        width: 100%
+        @extend .xt_Main
         margin: 7px
-        border: dashed 5px $colorB1
+        border-color: $colorB1
         padding: 5px
-        border-radius: 5px
         div img
             margin: 10px
 
@@ -145,34 +140,32 @@ footer
 /*  --------------------
     06. ANIMACIONES
     --------------------*/
+@mixin mi_Animation($name, $duration, $iteration)
+    animation-name: $name
+    animation-duration: $duration
+    animation-iteration-count: $iteration
+
 header
-    animation-name: fadeInDown
-    animation-duration: 1.5s
+    @include mi_Animation(fadeInDown, 1.5s, 1)
     p:hover
         color: $colorA2
         font-size: 60px
         transition-duration: 1.5s
     nav ul li:hover
         background-color: $colorB1
-        animation-name: pulse
-        animation-duration: 1.5s
-        animation-iteration-count: infinite
+        @include mi_Animation(pulse, 1.5s, infinite)
 
 main
-    animation-name: fadeInLeft
-    animation-duration: 1.5s
+    @include mi_Animation(fadeInLeft, 1.5s, 1)
     #skills img:hover
         transform: scale(1.2)
         transition-duration: 1.5s
 
 footer
-    animation-name: fadeInUp
-    animation-duration: 1.5s
+    @include mi_Animation(fadeInUp, 1.5s, 1)
     i:hover
         color: $colorA2
-        animation-name: pulse
-        animation-duration: 1.5s
-        animation-iteration-count: infinite
+        @include mi_Animation(pulse, 1.5s, infinite)
 
 @keyframes fadeInDown
     from

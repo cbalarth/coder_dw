@@ -8,6 +8,30 @@
   box-sizing: border-box;
 }
 
+h2 {
+  color: #050404;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 40px;
+  margin: 15px 0px 15px 0px;
+}
+
+h3 {
+  color: #262323;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 15px 0px 15px 0px;
+}
+
+h4 {
+  color: #3F3D3D;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 15px;
+  margin: 15px 0px 15px 0px;
+}
+
 body {
   background-image: linear-gradient(180deg, #30D5C8 0%, #51E0B9 17%, #78E9A6 39%, #A1F192 60%, #CCF67F 80%, #F9F871 100%);
   height: 100vh;
@@ -15,26 +39,6 @@ body {
   background-attachment: fixed;
   display: grid;
   grid-template-rows: 440px auto 80px;
-}
-body h2 {
-  margin-bottom: 20px;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: -1px;
-  text-decoration: underline;
-}
-body h3 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 20px;
-  font-weight: bold;
-}
-body h4 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 15px;
-  font-weight: normal;
-  text-decoration: underline;
 }
 body p {
   margin-bottom: 15px;
@@ -86,22 +90,24 @@ header nav ul li a:hover {
 /*  --------------------
  *  02. MAIN
  *  --------------------*/
+.xt_Main, main section, main {
+  border: dashed 5px;
+  border-radius: 5px;
+  width: auto;
+}
+
 main {
   margin: 14px;
-  width: auto;
-  border: dashed 5px #F9F871;
+  border-color: #F9F871;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  border-radius: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 main section {
-  width: 100%;
   margin: 7px;
-  border: dashed 5px #E8F3F1;
+  border-color: #E8F3F1;
   padding: 5px;
-  border-radius: 5px;
 }
 main section div img {
   margin: 10px;
@@ -165,6 +171,7 @@ footer p {
 header {
   animation-name: fadeInDown;
   animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
 header p:hover {
   color: #51E0B9;
@@ -181,6 +188,7 @@ header nav ul li:hover {
 main {
   animation-name: fadeInLeft;
   animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
 main #skills img:hover {
   transform: scale(1.2);
@@ -190,6 +198,7 @@ main #skills img:hover {
 footer {
   animation-name: fadeInUp;
   animation-duration: 1.5s;
+  animation-iteration-count: 1;
 }
 footer i:hover {
   color: #51E0B9;
