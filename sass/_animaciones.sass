@@ -6,11 +6,16 @@
 header
     @include mi_Animation(fadeInDown, 1.5s, 1)
     p:hover
-        color: $colorA2
+        color: $colorC1
         font-size: 45px
         transition-duration: 1.5s
+    
     nav ul li:hover
-        background-color: $colorA3
+        border-color: $colorD1
+        a
+            color: $colorD1
+        i
+            color: $colorD1
         @include mi_Animation(pulse, 1.5s, infinite)
 
 main
@@ -22,7 +27,7 @@ main
 footer
     @include mi_Animation(fadeInUp, 1.5s, 1)
     i:hover
-        color: $colorA2
+        color: $colorA1
         @include mi_Animation(pulse, 1.5s, infinite)
 
 @keyframes fadeInDown

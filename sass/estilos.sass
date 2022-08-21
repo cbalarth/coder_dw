@@ -1,10 +1,9 @@
 $font1: 'Finlandica', sans-serif
-$colorA1: #C58B7F
-$colorA2: #FFC1B4
-$colorA3: #FFE5DA
-$colorB1: #3f3d3d
-$colorB2: #878585
-$colorB3: #D7D4D4
+$colorA1: #FCDE67
+$colorC1: #030E12
+$colorC2: #5D6568
+$colorC3: #C1CACE
+$colorD1: #9f2723
 
 /*  --------------------
     00. GENERAL
@@ -15,9 +14,9 @@ $colorB3: #D7D4D4
     font-family: $font1
     box-sizing: border-box
     p
-        color: white
+        color: $colorC1
 
-$map_H: 2 white bold underline 40px, 3 $colorB2 bold none 30px, 4 white normal underline 15px
+$map_H: 2 $colorC1 bold underline 40px, 3 $colorC2 bold none 30px, 4 $colorC3 normal underline 15px
 @each $title, $color, $fweight, $tdecoration, $fsize in $map_H
     h#{$title}
         color: $color
@@ -27,12 +26,9 @@ $map_H: 2 white bold underline 40px, 3 $colorB2 bold none 30px, 4 white normal u
         margin: 15px 0px 15px 0px
 
 body
-    background-image: linear-gradient(to bottom, #3f3d3d, #3f3d3d, #3f3d3d, #3f3d3d, #3f3d3d, #4d4747, #5c5151, #6b5b5b, #8e7372, #b38c88, #d9a69e, #ffc1b4)
-    height: 100vh
-    background-repeat: no-repeat
-    background-attachment: fixed
+    background-color: $colorA1
     display: grid
-    grid-template-rows: 440px auto 80px
+    grid-template-rows: 440px auto 800px
     p
         margin-bottom: 15px
         line-height: 30px
@@ -43,53 +39,47 @@ body
     01. HEADER
     --------------------*/
 header
-    background-color: $colorB1
+    background-color: $colorA1
     width: 100%
-    position: sticky
-    top:0px
     text-align: center
-    border-bottom: ridge 1px white
     a p
-        font-family: 'Press Start 2P', cursive
         font-size: 40px
-        color: white
+        color: $colorD1
         margin: 25px 0px 25px 0px
     a:hover
         text-decoration: none
     nav ul li 
         list-style: none
-        background-color: white
-        border: solid 3px $colorA1
+        background-color: $colorA1
+        border: solid 2px $colorC1
         border-radius: 5px
         margin: 10px 20px 10px 20px
         width: 150px
         a
-            color: black
-            &:hover
-                color: black
+            color: $colorC1
     i
-        color: $colorA1
+        color: $colorC1
 
 /*  --------------------
     02. MAIN
     --------------------*/
 .xt_Main
-    border: dashed 5px
+    border: dashed 2px
     border-radius: 5px
     width: auto
 
 main
     @extend .xt_Main
     margin: 14px
-    border-color: $colorB2
+    border-color: $colorC1
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
     display: flex
     flex-direction: row
     flex-wrap: wrap
     section
         @extend .xt_Main
-        margin: 7px
-        border-color: $colorB3
+        margin: 14px
+        border-color: $colorD1
         padding: 5px
         div img
             margin: 10px
@@ -98,15 +88,14 @@ main
     03. FOOTER
     --------------------*/
 footer
-    border-top: ridge 1px white
     text-align: center
-    background-color: $colorB1
+    background-color: $colorC1
     width: 100%
     i
-        color: white
+        color: $colorC3
         margin: 0px 5px 0px 5px
     p
-        color: white
+        color: $colorC3
 
 /*  --------------------
     04. CLASS & ID

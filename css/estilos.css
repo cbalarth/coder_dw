@@ -8,11 +8,11 @@
   box-sizing: border-box;
 }
 * p {
-  color: white;
+  color: #030E12;
 }
 
 h2 {
-  color: white;
+  color: #030E12;
   font-weight: bold;
   text-decoration: underline;
   font-size: 40px;
@@ -20,7 +20,7 @@ h2 {
 }
 
 h3 {
-  color: #878585;
+  color: #5D6568;
   font-weight: bold;
   text-decoration: none;
   font-size: 30px;
@@ -28,7 +28,7 @@ h3 {
 }
 
 h4 {
-  color: white;
+  color: #C1CACE;
   font-weight: normal;
   text-decoration: underline;
   font-size: 15px;
@@ -36,12 +36,9 @@ h4 {
 }
 
 body {
-  background-image: linear-gradient(to bottom, #3f3d3d, #3f3d3d, #3f3d3d, #3f3d3d, #3f3d3d, #4d4747, #5c5151, #6b5b5b, #8e7372, #b38c88, #d9a69e, #ffc1b4);
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #FCDE67;
   display: grid;
-  grid-template-rows: 440px auto 80px;
+  grid-template-rows: 440px auto 800px;
 }
 body p {
   margin-bottom: 15px;
@@ -55,17 +52,13 @@ body input {
  *  01. HEADER
  *  --------------------*/
 header {
-  background-color: #3f3d3d;
+  background-color: #FCDE67;
   width: 100%;
-  position: sticky;
-  top: 0px;
   text-align: center;
-  border-bottom: ridge 1px white;
 }
 header a p {
-  font-family: "Press Start 2P", cursive;
   font-size: 40px;
-  color: white;
+  color: #9f2723;
   margin: 25px 0px 25px 0px;
 }
 header a:hover {
@@ -73,42 +66,39 @@ header a:hover {
 }
 header nav ul li {
   list-style: none;
-  background-color: white;
-  border: solid 3px #C58B7F;
+  background-color: #FCDE67;
+  border: solid 2px #030E12;
   border-radius: 5px;
   margin: 10px 20px 10px 20px;
   width: 150px;
 }
 header nav ul li a {
-  color: black;
-}
-header nav ul li a:hover {
-  color: black;
+  color: #030E12;
 }
 header i {
-  color: #C58B7F;
+  color: #030E12;
 }
 
 /*  --------------------
  *  02. MAIN
  *  --------------------*/
 .xt_Main, main section, main {
-  border: dashed 5px;
+  border: dashed 2px;
   border-radius: 5px;
   width: auto;
 }
 
 main {
   margin: 14px;
-  border-color: #878585;
+  border-color: #030E12;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 main section {
-  margin: 7px;
-  border-color: #D7D4D4;
+  margin: 14px;
+  border-color: #9f2723;
   padding: 5px;
 }
 main section div img {
@@ -119,17 +109,16 @@ main section div img {
  *  03. FOOTER
  *  --------------------*/
 footer {
-  border-top: ridge 1px white;
   text-align: center;
-  background-color: #3f3d3d;
+  background-color: #030E12;
   width: 100%;
 }
 footer i {
-  color: white;
+  color: #C1CACE;
   margin: 0px 5px 0px 5px;
 }
 footer p {
-  color: white;
+  color: #C1CACE;
 }
 
 /*  --------------------
@@ -181,15 +170,21 @@ header {
   animation-iteration-count: 1;
 }
 header p:hover {
-  color: #FFC1B4;
+  color: #030E12;
   font-size: 45px;
   transition-duration: 1.5s;
 }
 header nav ul li:hover {
-  background-color: #FFE5DA;
+  border-color: #9f2723;
   animation-name: pulse;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
+}
+header nav ul li:hover a {
+  color: #9f2723;
+}
+header nav ul li:hover i {
+  color: #9f2723;
 }
 
 main {
@@ -208,7 +203,7 @@ footer {
   animation-iteration-count: 1;
 }
 footer i:hover {
-  color: #FFC1B4;
+  color: #FCDE67;
   animation-name: pulse;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
