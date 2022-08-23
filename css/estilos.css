@@ -13,7 +13,7 @@ p {
 }
 
 h2 {
-  color: #030E12;
+  color: #9f2723;
   font-weight: bold;
   text-decoration: underline;
   font-size: 40px;
@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-  color: #5D6568;
+  color: #030E12;
   font-weight: bold;
   text-decoration: none;
   font-size: 30px;
@@ -29,7 +29,7 @@ h3 {
 }
 
 h4 {
-  color: #C1CACE;
+  color: #5D6568;
   font-weight: normal;
   text-decoration: underline;
   font-size: 15px;
@@ -173,6 +173,36 @@ footer p {
   margin-top: 8px;
 }
 
+.cert {
+  width: 300px;
+  height: 300px;
+}
+
+#portafolio {
+  display: grid;
+  padding: 1rem;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 150px 150px;
+  font-size: 5rem;
+}
+#portafolio div {
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}
+
+.servicio {
+  width: 50%;
+  background-color: #FEF0CA;
+  border: solid 1px #FEF0CA;
+  border-radius: 5px;
+}
+.servicio img {
+  margin: 0px;
+  border-radius: 5px;
+}
+
 /*  --------------------
  *  05. MEDIA QUERIES
  *  --------------------*/
@@ -259,6 +289,7 @@ footer i:hover {
 }
 .whatsapp:hover {
   color: #9f2723;
+  border-color: #9f2723;
 }
 
 @keyframes fadeInDown {

@@ -1,6 +1,7 @@
 $font1: 'Finlandica', sans-serif
 $font2: 'Plaster', cursive
 $colorA1: #FCDE67
+$colorA2: #FEF0CA
 $colorB1: #030E12
 $colorB2: #5D6568
 $colorB3: #C1CACE
@@ -20,7 +21,7 @@ $mainMargin: 14px
 p
     color: $colorB1
 
-$map_H: 2 $colorB1 bold underline 40px, 3 $colorB2 bold none 30px, 4 $colorB3 normal underline 15px
+$map_H: 2 $colorC1 bold underline 40px, 3 $colorB1 bold none 30px, 4 $colorB2 normal underline 15px
 @each $title, $color, $fweight, $tdecoration, $fsize in $map_H
     h#{$title}
         color: $color
@@ -144,6 +145,31 @@ footer
     border: solid 2px white
     &Icon
         margin-top: 8px
+
+.cert
+    width: 300px
+    height: 300px
+
+#portafolio
+    display: grid
+    padding: 1rem
+    grid-gap: 1rem
+    grid-template-columns: repeat(3, auto)
+    grid-template-rows: 150px 150px
+    font-size: 5rem
+    div
+        background-color: rebeccapurple
+        color: white
+        padding: 1rem
+
+.servicio
+    width: 50%
+    background-color: $colorA2
+    border: solid 1px $colorA2
+    border-radius: $radius
+    img
+        margin: 0px
+        border-radius: $radius
 
 /*  --------------------
     05. MEDIA QUERIES
