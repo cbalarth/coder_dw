@@ -8,14 +8,19 @@ header
     p:hover
         color: $colorC1
         font-size: 45px
-        transition-duration: 1.5s
-    
+        transition-duration: 1s
+        span
+            color: $colorB1
+            font-size: 45px
+            transition-duration: 1s
+    a:hover
+        text-decoration: none
     nav ul li:hover
-        border-color: $colorD1
+        border-color: $colorC1
         a
-            color: $colorD1
+            color: $colorC1 !important
         i
-            color: $colorD1
+            color: $colorC1
         @include mi_Animation(pulse, 1.5s, infinite)
 
 main

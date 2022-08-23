@@ -7,7 +7,8 @@
   font-family: "Finlandica", sans-serif;
   box-sizing: border-box;
 }
-* p {
+
+p {
   color: #030E12;
 }
 
@@ -37,8 +38,8 @@ h4 {
 
 body {
   background-color: #FCDE67;
-  display: grid;
-  grid-template-rows: 440px auto 800px;
+  display: flex;
+  flex-direction: column;
 }
 body p {
   margin-bottom: 15px;
@@ -58,11 +59,15 @@ header {
 }
 header a p {
   font-size: 40px;
-  color: #9f2723;
+  color: #030E12;
   margin: 25px 0px 25px 0px;
 }
-header a:hover {
-  text-decoration: none;
+header a p span {
+  color: #9f2723;
+}
+header nav ul {
+  width: 100%;
+  justify-content: center;
 }
 header nav ul li {
   list-style: none;
@@ -73,9 +78,9 @@ header nav ul li {
   width: 150px;
 }
 header nav ul li a {
-  color: #030E12;
+  color: #030E12 !important;
 }
-header i {
+header nav ul li i {
   color: #030E12;
 }
 
@@ -89,20 +94,19 @@ header i {
 }
 
 main {
+  min-height: calc(100vh - 136px - 28px);
   margin: 14px;
   border-color: #030E12;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: #C1CACE 0px 0px 50px 1px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 main section {
+  width: 100%;
   margin: 14px;
   border-color: #9f2723;
   padding: 5px;
-}
-main section div img {
-  margin: 10px;
 }
 
 /*  --------------------
@@ -112,6 +116,7 @@ footer {
   text-align: center;
   background-color: #030E12;
   width: 100%;
+  padding: 10px;
 }
 footer i {
   color: #C1CACE;
@@ -124,12 +129,6 @@ footer p {
 /*  --------------------
  *  04. CLASS & ID
  *  --------------------*/
-.textoEncerrado {
-  max-height: 150px;
-  overflow: auto;
-  color: grey;
-}
-
 .tablaServicios {
   display: inline-block;
   border-color: goldenrod;
@@ -137,28 +136,26 @@ footer p {
   margin-bottom: 15px;
 }
 
-#skills {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  justify-items: center;
+.activePage {
+  border-color: #9f2723;
+}
+.activePage a {
+  color: #9f2723 !important;
+}
+.activePage i {
+  color: #9f2723;
+}
+
+.carousel {
+  width: 800px;
 }
 
 /*  --------------------
  *  05. MEDIA QUERIES
  *  --------------------*/
-@media only screen and (min-width: 768px) {
-  body {
-    grid-template-rows: 160px auto 80px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  #skills {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media only screen and (min-width: 1024px) {
-  #skills {
-    grid-template-columns: repeat(3, 1fr);
+@media only screen and (min-width: 992px) {
+  main {
+    min-height: calc(100vh - 160px - 28px);
   }
 }
 /*  --------------------
@@ -170,9 +167,17 @@ header {
   animation-iteration-count: 1;
 }
 header p:hover {
+  color: #9f2723;
+  font-size: 45px;
+  transition-duration: 1s;
+}
+header p:hover span {
   color: #030E12;
   font-size: 45px;
-  transition-duration: 1.5s;
+  transition-duration: 1s;
+}
+header a:hover {
+  text-decoration: none;
 }
 header nav ul li:hover {
   border-color: #9f2723;
@@ -181,7 +186,7 @@ header nav ul li:hover {
   animation-iteration-count: infinite;
 }
 header nav ul li:hover a {
-  color: #9f2723;
+  color: #9f2723 !important;
 }
 header nav ul li:hover i {
   color: #9f2723;

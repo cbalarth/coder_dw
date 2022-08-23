@@ -1,9 +1,11 @@
 $font1: 'Finlandica', sans-serif
 $colorA1: #FCDE67
-$colorC1: #030E12
-$colorC2: #5D6568
-$colorC3: #C1CACE
-$colorD1: #9f2723
+$colorB1: #030E12
+$colorB2: #5D6568
+$colorB3: #C1CACE
+$colorC1: #9f2723
+$radius: 5px
+$mainMargin: 14px
 
 /*  --------------------
     00. GENERAL
@@ -13,10 +15,11 @@ $colorD1: #9f2723
     padding:0
     font-family: $font1
     box-sizing: border-box
-    p
-        color: $colorC1
 
-$map_H: 2 $colorC1 bold underline 40px, 3 $colorC2 bold none 30px, 4 $colorC3 normal underline 15px
+p
+    color: $colorB1
+
+$map_H: 2 $colorB1 bold underline 40px, 3 $colorB2 bold none 30px, 4 $colorB3 normal underline 15px
 @each $title, $color, $fweight, $tdecoration, $fsize in $map_H
     h#{$title}
         color: $color
@@ -27,8 +30,8 @@ $map_H: 2 $colorC1 bold underline 40px, 3 $colorC2 bold none 30px, 4 $colorC3 no
 
 body
     background-color: $colorA1
-    display: grid
-    grid-template-rows: 440px auto 800px
+    display: flex
+    flex-direction: column
     p
         margin-bottom: 15px
         line-height: 30px
@@ -44,90 +47,88 @@ header
     text-align: center
     a p
         font-size: 40px
-        color: $colorD1
+        color: $colorB1
         margin: 25px 0px 25px 0px
-    a:hover
-        text-decoration: none
-    nav ul li 
-        list-style: none
-        background-color: $colorA1
-        border: solid 2px $colorC1
-        border-radius: 5px
-        margin: 10px 20px 10px 20px
-        width: 150px
-        a
+        span
             color: $colorC1
-    i
-        color: $colorC1
+    nav ul
+        width: 100%
+        justify-content: center
+        li
+            list-style: none
+            background-color: $colorA1
+            border: solid 2px $colorB1
+            border-radius: $radius
+            margin: 10px 20px 10px 20px
+            width: 150px
+            a
+                color: $colorB1 !important
+            i
+                color: $colorB1
 
 /*  --------------------
     02. MAIN
     --------------------*/
 .xt_Main
     border: dashed 2px
-    border-radius: 5px
+    border-radius: $radius
     width: auto
 
 main
+    min-height: calc(100vh - 136px - (2*$mainMargin))
     @extend .xt_Main
-    margin: 14px
-    border-color: $colorC1
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+    margin: $mainMargin
+    border-color: $colorB1
+    box-shadow: $colorB3 0px 0px 50px 1px
     display: flex
     flex-direction: row
     flex-wrap: wrap
     section
         @extend .xt_Main
+        width: 100%
         margin: 14px
-        border-color: $colorD1
+        border-color: $colorC1
         padding: 5px
-        div img
-            margin: 10px
 
 /*  --------------------
     03. FOOTER
     --------------------*/
 footer
     text-align: center
-    background-color: $colorC1
+    background-color: $colorB1
     width: 100%
+    padding: 10px
     i
-        color: $colorC3
+        color: $colorB3
         margin: 0px 5px 0px 5px
     p
-        color: $colorC3
+        color: $colorB3
 
 /*  --------------------
     04. CLASS & ID
     --------------------*/
-.textoEncerrado
-    max-height: 150px
-    overflow: auto
-    color: grey
-
 .tablaServicios
     display: inline-block
     border-color: goldenrod
-    border-radius: 5px
+    border-radius: $radius
     margin-bottom: 15px
 
-#skills
-    display: grid
-    grid-template-columns: repeat(1, 1fr)
-    justify-items: center
+.activePage
+    border-color: $colorC1
+    a
+        color: $colorC1 !important
+    i
+        color: $colorC1
+
+.carousel
+    width: 800px
 
 /*  --------------------
     05. MEDIA QUERIES
     --------------------*/
-@media only screen and (min-width:768px)
-    body
-        grid-template-rows: 160px auto 80px
-@media only screen and (min-width:768px) and (max-width:1023px)
-    #skills
-        grid-template-columns: repeat(2, 1fr)
-@media only screen and (min-width:1024px)
-    #skills
-        grid-template-columns: repeat(3, 1fr)
+@media only screen and (min-width:992px)
+    main
+        min-height: calc(100vh - 160px - (2*$mainMargin))
 
 /*  --------------------
     06. ANIMACIONES
