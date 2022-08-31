@@ -59,6 +59,7 @@ header {
   text-align: center;
 }
 header a p {
+  line-height: 35px;
   min-height: 40px;
   font-size: 50px;
   font-family: "Plaster", cursive;
@@ -152,7 +153,10 @@ footer p {
 }
 
 .carousel {
-  width: 800px;
+  background-color: #FEF0CA;
+  border-radius: 5px;
+  max-height: 500px;
+  max-width: 750px;
 }
 
 .whatsapp {
@@ -174,25 +178,28 @@ footer p {
 }
 
 .cert {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
+  background-color: #FEF0CA;
+  border-radius: 5px;
 }
 
 #portafolio {
   display: grid;
-  padding: 1rem;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: 150px 150px;
-  font-size: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-gap: 15px;
 }
 #portafolio div {
-  background-color: rebeccapurple;
-  color: white;
-  padding: 1rem;
+  background-color: #C1CACE;
+  color: #FCDE67;
+  max-width: 340px;
+  padding: 3rem;
+  border-radius: 5px;
 }
 
 .servicio {
+  margin-top: 15px;
   width: 50%;
   background-color: #FEF0CA;
   border: solid 1px #FEF0CA;
@@ -203,12 +210,32 @@ footer p {
   border-radius: 5px;
 }
 
+.navbar-toggler {
+  border: solid 2px #9f2723 !important;
+}
+
 /*  --------------------
  *  05. MEDIA QUERIES
  *  --------------------*/
+@media only screen and (min-width: 768px) {
+  #portafolio {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
 @media only screen and (min-width: 992px) {
   main {
     min-height: calc(100vh - 170px - 28px);
+  }
+  .cert {
+    width: 750px;
+  }
+  #portafolio {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .servicio {
+    width: 75%;
   }
 }
 /*  --------------------
@@ -290,6 +317,12 @@ footer i:hover {
 .whatsapp:hover {
   color: #9f2723;
   border-color: #9f2723;
+}
+
+#portafolio div:hover {
+  background-color: #9f2723;
+  color: #030E12;
+  transform: scale(1.05);
 }
 
 @keyframes fadeInDown {

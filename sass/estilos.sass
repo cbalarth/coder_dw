@@ -49,6 +49,7 @@ header
     width: 100%
     text-align: center
     a p
+        line-height: 35px
         min-height: 40px
         font-size: 50px
         font-family: $font2
@@ -80,7 +81,6 @@ header
     border: dashed 2px
     border-radius: $radius
     width: auto
-
 main
     min-height: calc(100vh - 146px - (2*$mainMargin))
     @extend .xt_Main
@@ -119,17 +119,17 @@ footer
     border-color: goldenrod
     border-radius: $radius
     margin-bottom: 15px
-
 .activePage
     border-color: $colorC1
     a
         color: $colorC1 !important
     i
         color: $colorC1
-
 .carousel
-    width: 800px
-
+    background-color: $colorA2
+    border-radius: $radius
+    max-height: 500px
+    max-width: 750px
 .whatsapp 
     position: fixed
     width: 50px
@@ -145,24 +145,24 @@ footer
     border: solid 2px white
     &Icon
         margin-top: 8px
-
 .cert
-    width: 300px
-    height: 300px
-
+    width: 450px
+    height: 450px
+    background-color: $colorA2
+    border-radius: $radius
 #portafolio
     display: grid
-    padding: 1rem
-    grid-gap: 1rem
-    grid-template-columns: repeat(3, auto)
-    grid-template-rows: 150px 150px
-    font-size: 5rem
+    grid-template-columns: repeat(1, 1fr)
+    grid-template-rows: repeat(9, 1fr)
+    grid-gap: 15px
     div
-        background-color: rebeccapurple
-        color: white
-        padding: 1rem
-
+        background-color: $colorB3
+        color: $colorA1
+        max-width: 340px
+        padding: 3rem
+        border-radius: $radius
 .servicio
+    margin-top: 15px
     width: 50%
     background-color: $colorA2
     border: solid 1px $colorA2
@@ -170,13 +170,26 @@ footer
     img
         margin: 0px
         border-radius: $radius
+.navbar-toggler
+    border: solid 2px $colorC1 !important
 
 /*  --------------------
     05. MEDIA QUERIES
     --------------------*/
+@media only screen and (min-width:768px)
+    #portafolio
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(5, 1fr)
 @media only screen and (min-width:992px)
     main
         min-height: calc(100vh - 170px - (2*$mainMargin))
+    .cert
+        width: 750px
+    #portafolio
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(3, 1fr)
+    .servicio
+        width: 75%
 
 /*  --------------------
     06. SCROLLBAR
